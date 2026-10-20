@@ -1,0 +1,6 @@
+{
+  "task_id": "regional_profit_filter",
+  "task_class": "derived_data_encoding",
+  "instructions": "Using matplotlib, create a horizontal bar chart from these records: (North, A, units=12, price=10, cost=6), (North, B, 8, 12, 7), (South, A, 15, 9, 5), (South, C, 20, 7, 4), (East, A, 10, 11, 8), (East, B, 14, 6, 2), (West, C, 9, 13, 9), (West, A, 18, 8, 3). First discard records with units below 10. For every remaining record compute profit=(price-cost)*units, then sum profit by region. Sort regions by total profit from largest to smallest and display that descending order from top to bottom. Use dark green horizontal bars, label every bar with its exact total, start the x axis at zero, label the axes `Total Profit` and `Region`, and set the exact title `Filtered Profit by Region`. Make the figure 8 by 5 inches at 120 dpi. Save the result as figure.png.",
+  "inputs": []
+}

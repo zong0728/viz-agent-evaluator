@@ -1,0 +1,1042 @@
+{
+  "predictions": [
+    {
+      "run_id": "001",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "004",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The third subplot uses a base 3 logarithmic scale on the x-axis, but the plot shows a standard log scale instead."
+        }
+      ]
+    },
+    {
+      "run_id": "008",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart title is 'Sankey diagram of source to target flows' instead of the required 'Fruit Flow Sankey Diagram'. The legend is positioned at the bottom instead of the upper left with a title. The figure size is 10x7 inches, but the layout is not clearly separated with distinct left and right sides as requested."
+        }
+      ]
+    },
+    {
+      "run_id": "009",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The title is incorrect, showing 'Matplotlib Release Dates' instead of the required 'Matplotlib Release Dates'."
+        }
+      ]
+    },
+    {
+      "run_id": "010",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "013",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The x-axis limits are incorrect, showing -5 to 25 instead of 0 to 20 as required."
+        }
+      ]
+    },
+    {
+      "run_id": "016",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The chart includes versions with shares below 0.5%, such as Chrome 69.0 (0.43) and Firefox 60.0 (0.4), which should have been filtered out."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart is a ring chart, not a donut chart with two concentric rings; the inner ring does not display browser names, and the outer ring labels are not clearly separated with lines pointing to segments."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The labels for versions are crowded and overlapping, making them difficult to read, and the legend is missing."
+        }
+      ]
+    },
+    {
+      "run_id": "021",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The x-axis labels are incorrect: 'auth' is labeled as 'auth', 'catalog' as 'catalog', 'search' as 'search', and 'checkout' as 'checkout', but the labels are rotated and misaligned, and the title is missing the word 'Across' and the y-axis label is missing 'ms'."
+        }
+      ]
+    },
+    {
+      "run_id": "022",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The left panel's title is 'Linear Scale' instead of containing the word 'linear', and the right panel's title is 'Logarithmic Scale' instead of containing the word 'log'."
+        }
+      ]
+    },
+    {
+      "run_id": "023",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The titles are incorrect; the left plot is titled 'grid (300 pts, 20000 grid pts)' but should be 'Method 1: Interpolated Contour Plot (100x200 grid points)', and the right plot is titled 'tricontour (300 pts)' but should be 'Method 2: Triangular Contour Plot (Direct unstructured grid)'. The titles do not match the requested format."
+        }
+      ]
+    },
+    {
+      "run_id": "025",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The chart uses a pie chart instead of a sunburst chart, and the data is incorrectly structured by country only, ignoring the 'Major Area' and 'Regions' hierarchy. The color coding for regions is also missing."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart is a pie chart, not a sunburst chart, and lacks the required hierarchical structure based on 'Major Area', 'Regions', and 'Country'. The legend for region colors is missing, and the title and subtitle are incorrectly placed."
+        }
+      ]
+    },
+    {
+      "run_id": "026",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The chart shows a single gray circle labeled '/CAfricaa' instead of the requested hierarchical sunburst chart with 'Major Area', 'Regions', and 'Country' levels, and the 'Overall score' values are not represented."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart is not a sunburst chart; it's a simple concentric circle with incorrect labels and no proper hierarchy. The center is not hollow as required, and the legend colors do not match the specified regions."
+        }
+      ]
+    },
+    {
+      "run_id": "028",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart uses a blue line for 2015 data, but the line connects points from all years, not just 2015, and the legend is missing. The title is correct, but the chart shows all years' data, not just 2015 as emphasized."
+        }
+      ]
+    },
+    {
+      "run_id": "029",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The subplot titles do not match the requested distribution types; the first row shows 'Normal Distribution' and 'Laplacian Distribution', but the second row shows 'Cauchy Distribution' and 'Normal (Zoomed)', which is inconsistent with the requirement for each subplot to demonstrate all three distribution types."
+        }
+      ]
+    },
+    {
+      "run_id": "030",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The figure uses incorrect data: the x and y variables are not z and w as required, and the transformations (z**3, -z, etc.) are not applied correctly to the plotted data."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The figure title is 'Shared axes' instead of 'Sharing x per column, y per row', and the axis labels are 'w' and 'z' instead of the required 'x' and 'y'."
+        }
+      ]
+    },
+    {
+      "run_id": "031",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The legend entries are incorrect: the colors are blue for Agree, orange for Neutral, and green for Disagree, but the legend labels are 'Agree', 'Neutral', and 'Disagree' in that order, which does not match the color assignments in the chart."
+        }
+      ]
+    },
+    {
+      "run_id": "034",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart has a label at the bottom stating 'white = positive, black = negative', which is not requested in the task. The task requires a title, not a legend or explanatory text at the bottom."
+        }
+      ]
+    },
+    {
+      "run_id": "038",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot compares total bill amounts by day of the week, but the x-axis labels are 'Thur', 'Fri', 'Sat', 'Sun' instead of the required 'day' of the week, and the legend shows 'Smoker' and 'Non-smoker' instead of 'smoker' and 'non-smoker' as specified."
+        }
+      ]
+    },
+    {
+      "run_id": "039",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The y-axis label is 'Latitude (Mercator)', not 'Latitude' as required, and the plotted line is not a straight line y=x due to the Mercator scaling applied to latitude."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The y-axis label is incorrect, and the chart title is misspelled as 'Mercator Projection' instead of 'Mercator projection'."
+        }
+      ]
+    },
+    {
+      "run_id": "046",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The title is incorrect; it reads 'This might seem unnecessary, but it's possible!' but the actual title is missing from the rendered image."
+        }
+      ]
+    },
+    {
+      "run_id": "047",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The chart shows only one bar for a single country, with a single blue segment labeled '(Percentage, renewables)', which is incorrect as it should display three stacked segments per country for Nuclear, Fossil, and Renewables."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart is a single bar, not one per country, and the sources are not stacked in the required order; the y-axis label is missing, and the title is incorrect."
+        }
+      ]
+    },
+    {
+      "run_id": "050",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The final phase is labeled 'Hurray!' but the task requires it to be 'Success!'. The flow value for the final transition is 20% instead of the required 10%."
+        }
+      ]
+    },
+    {
+      "run_id": "051",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The first panel is titled 'Varying density' instead of 'Varying Density' as required, and the second panel uses the 'jet' colormap which is explicitly forbidden."
+        }
+      ]
+    },
+    {
+      "run_id": "052",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The sharp interface is incorrectly drawn as a green vertical line at x=0 and horizontal lines at y=0 and y=1, but the plot shows a green line at x=0 and horizontal lines at y=0 and y=1, which is correct. However, the legend labels are incorrect: the blue curve is labeled 'Phase field' instead of 'Phase Field: 1/2 * (1 + tanh(gamma * x))', and the orange curve is labeled 'Composition' instead of 'Composition: 1/2 * (1 + tanh(omega * x))'. The text annotations are also incorrect, with the wrong equations and parameters."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The legend is missing the sharp interface line, and the arrow annotation is pointing to the intersection but is not labeled. The title is 'Phase field and composition profiles' instead of the required title. The x-axis label is 'x' and y-axis label is 'y', which is correct. The x-axis range is -2 to 2 and y-axis range is 0 to 1, which is correct. The chart type is correct, but the legend is incomplete and the title is incorrect."
+        }
+      ]
+    },
+    {
+      "run_id": "053",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "055",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The annotation text 'Peak: 412 visits' is missing from the chart, and the y-axis does not start at zero as required."
+        }
+      ]
+    },
+    {
+      "run_id": "059",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The second chart's title is incorrect; it reads 'Adjusted transparencies for each bar and each edge' instead of the required 'Adjusted transparencies for each bar and each edge'."
+        }
+      ]
+    },
+    {
+      "run_id": "060",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The title is incorrect; it reads 'Fishbone diagram: Decreased Sales Performance' instead of the required 'Fishbone diagram: Decreased Sales Performance'."
+        }
+      ]
+    },
+    {
+      "run_id": "062",
+      "errors": []
+    },
+    {
+      "run_id": "065",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "068",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plot shows a straight line but the x-axis extends beyond -180 to 180, ranging from -200 to 200, which violates the requirement to set x-axis limits to -180 to 180."
+        }
+      ]
+    },
+    {
+      "run_id": "069",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart uses the wrong color for Africa, showing it as green in the legend but using a different green shade for the Africa segment, and the legend incorrectly shows two entries for Africa."
+        }
+      ]
+    },
+    {
+      "run_id": "070",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The title is incorrect; it shows 'ggplot' style sheet instead of the required 'ggplot' style sheet with single quotes."
+        }
+      ]
+    },
+    {
+      "run_id": "074",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot shows two lines on the same axes with different y-scales, but the legend incorrectly labels the green line as 'exp(t)' and the blue line as 'sin(2πt)', which is the opposite of the data plotted."
+        }
+      ]
+    },
+    {
+      "run_id": "075",
+      "errors": []
+    },
+    {
+      "run_id": "077",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The legend labels the Shasta line as 'Shasta' but the line color is orange, while the Oroville line is blue, contradicting the required labels. The peak annotation is also incorrectly placed on the Shasta line instead of the Oroville line."
+        }
+      ]
+    },
+    {
+      "run_id": "079",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot is a 3D contour plot, not a tricontour plot, and the data is not based on triangulated points as required by a tricontour plot."
+        }
+      ]
+    },
+    {
+      "run_id": "080",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart does not display the checkout count above each bar as required; the labels are missing."
+        }
+      ]
+    },
+    {
+      "run_id": "081",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The figure shows a 2D color gradient instead of a 3D voxel plot with a cube, and the axes are labeled 'r' and 'g' but not 'b', indicating the requested 3D structure and axis labels are missing."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The visualization is a 2D heatmap, not a 3D voxel plot as required, with incorrect axis labels and no title or proper 3D structure."
+        }
+      ]
+    },
+    {
+      "run_id": "082",
+      "errors": []
+    },
+    {
+      "run_id": "083",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The second row plots use gamma-distributed data of size 80x70, but the horizontal plot shows a scatter of points instead of event lines, and the vertical plot uses a different data type (scatter) rather than event lines."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The second row plots are incorrectly rendered as scatter plots instead of event plots, violating the requested chart type."
+        }
+      ]
+    },
+    {
+      "run_id": "086",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The first chart uses blue and orange bars, but the second chart uses blue and yellow bars, violating the color requirement for negative y values."
+        }
+      ]
+    },
+    {
+      "run_id": "087",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The figure has only 5 subplots instead of the required 6, with the bottom-right subplot missing entirely."
+        }
+      ]
+    },
+    {
+      "run_id": "089",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "090",
+      "errors": []
+    },
+    {
+      "run_id": "091",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The subplot titled 'zero' has its left and bottom spines positioned at 0.5 instead of 0, and the subplot titled 'axes' has its spines positioned at 0.5 instead of 0.3, violating the specified spine positions."
+        }
+      ]
+    },
+    {
+      "run_id": "096",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "097",
+      "errors": []
+    },
+    {
+      "run_id": "098",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot uses a single y-axis for both data series instead of different left and right scales as required."
+        }
+      ]
+    },
+    {
+      "run_id": "099",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart title is incorrect, showing 'Polar bar plot with 30 random bars' instead of the required title. The y ticks (radial tick labels) are not removed, and the polar gridlines are turned off instead of being kept on."
+        }
+      ]
+    },
+    {
+      "run_id": "103",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "104",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The annotation text reads 'Peak: 412 visits' but is placed at the wrong y-coordinate; it appears at y=412 instead of the required y=430.0, and the text is not positioned within the allowed tolerance of the specified point."
+        }
+      ]
+    },
+    {
+      "run_id": "105",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The x-axis label 'Four separate samples' is duplicated and incorrectly placed under the first subplot, while the second subplot's x-axis label is missing."
+        }
+      ]
+    },
+    {
+      "run_id": "106",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The title is incorrect; it reads 'Filled 3D tricountour' instead of the required 'Filled 3D tricontour'."
+        }
+      ]
+    },
+    {
+      "run_id": "108",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The overall figure title is incorrect; it reads \"Seasonal Temperature Comparison Across Cities\" instead of containing the word \"temperature\" as required."
+        }
+      ]
+    },
+    {
+      "run_id": "111",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot uses colors purple, orange, grey, and pink, but the last bar of each set is not black; instead, the last bar in each group is a dark brown or black shade, and the colors are not consistently mapped to the requested y=k layers."
+        }
+      ]
+    },
+    {
+      "run_id": "112",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot uses a single axis with a broken y-axis visual effect, but the task required a broken axis plot with a portion of the y-axis cut out using slanted lines as markers, which is not implemented correctly."
+        }
+      ]
+    },
+    {
+      "run_id": "115",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The required circular markers for each group's median are missing from the plot."
+        }
+      ]
+    },
+    {
+      "run_id": "117",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot is 2D instead of 3D, missing the 'w' axis and 3D projection, and the y-axis is labeled 'v' instead of 'w'. The title is also misspelled as 'Rossler' instead of 'Rossler'."
+        }
+      ]
+    },
+    {
+      "run_id": "124",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot title is incorrect; it reads 'Polar Bar Plot with Random Diameters and Thicknesses' instead of the required title, which is not specified but should match the task description."
+        }
+      ]
+    },
+    {
+      "run_id": "125",
+      "errors": []
+    },
+    {
+      "run_id": "126",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The equation plotted is f(x) = (x-4)(x-6)(x-8)+90, but the y-values are incorrect as the function is defined as (x-4)(x-6)(x-8)+60 in the code, and the shaded region is not filled between the curve and x-axis over [3,10]."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The x-axis label is 'x' but should be 'z', the y-axis label is 'y' but should be 'y', the title is incorrect, the x-ticks are labeled 'a' and 'b' instead of '3' and '10', and the integral formula uses 'a' and 'b' instead of '3' and '10'."
+        }
+      ]
+    },
+    {
+      "run_id": "128",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plot uses colors purple, orange, grey, and pink, but also includes other colors like gold, black, and dark purple, and the last bar of each set is not consistently black."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The y-axis labels show a range from -5 to 5, but the data is only available for y=k, and the plot does not show discrete values for the y-axis as requested."
+        }
+      ]
+    },
+    {
+      "run_id": "129",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The chart displays horizontal bar charts instead of concentric doughnut rings, showing market share by year but not as requested. The data is incorrectly represented as stacked bars rather than concentric rings, and the white sections for other operating systems are not aligned at the top of each ring."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The requested doughnut chart with concentric rings for each year is not present; instead, a horizontal stacked bar chart is shown. The chart type, layout, and visual representation do not match the requirements for a doughnut chart with concentric rings."
+        }
+      ]
+    },
+    {
+      "run_id": "130",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot uses the wrong colormap (jet instead of viridis) and the projections are not colored blue, red, and green as required; the colorbar is also incorrectly labeled and positioned."
+        }
+      ]
+    },
+    {
+      "run_id": "131",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The figure uses a 4x1 layout instead of the required 2x2 grid, and the subplot titles do not match the requested labels."
+        }
+      ]
+    },
+    {
+      "run_id": "135",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The main problem is labeled as \"Problem: Decreased Sales Performance\" instead of just \"Problem\" as requested, and the title is incorrect."
+        }
+      ]
+    },
+    {
+      "run_id": "136",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The first broken bar is blue, but the second bar's segments are colored blue, green, and red, not orange, green, and red as requested."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The y-axis labels are reversed; 'Bill' is at the top and 'Jim' is at the bottom, opposite the requested order."
+        }
+      ]
+    },
+    {
+      "run_id": "141",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart uses the wrong color order for the sports categories, with Football mapped to the wrong color in the legend and the bars, violating the requested RdYlGn colormap assignment."
+        }
+      ]
+    },
+    {
+      "run_id": "142",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The chart shows vertical bars instead of horizontal bars as required, and the data values are incorrect, with the wrong sports listed in the legend and incorrect values in the bars."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart is a vertical stacked bar chart instead of a horizontal one, the title is incorrect, and the legend is missing the 'Tennis' category."
+        }
+      ]
+    },
+    {
+      "run_id": "143",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The first subplot shows exponential decay with a decay factor of 7.0, but the data range is incorrect as it uses a different x-axis scale than specified. The third subplot uses a base 3 logarithmic scale on the x-axis, but the data is plotted on a linear scale instead."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The fourth subplot has error bars, but the x error is 15% of x and the y error is 7.0 plus 80% of y, which is not correctly implemented. The y-axis of the first subplot, the x-axis of the second subplot, and both axes of the third and fourth subplots should be on a logarithmic scale, but this is not correctly applied."
+        }
+      ]
+    },
+    {
+      "run_id": "145",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "146",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The main problem is labeled 'Decreased Sales Performance' instead of 'Problem' as required, and the title is incorrect, reading 'Fishbone Diagram: Potential Causes of Decreased Sales Performance' instead of the required 'Problem' at the head of the diagram."
+        }
+      ]
+    },
+    {
+      "run_id": "150",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot uses 3D line graphs instead of polygons to fill under the curves, violating the requirement to generate polygons."
+        }
+      ]
+    },
+    {
+      "run_id": "153",
+      "errors": []
+    },
+    {
+      "run_id": "155",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The first plot uses a Mobius strip function instead of the requested function mapping p, q to x, y, z, and the second plot uses a different function than specified, violating the data requirements."
+        }
+      ]
+    },
+    {
+      "run_id": "156",
+      "errors": []
+    },
+    {
+      "run_id": "161",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The secondary y-axis for sin(2*pi*t) is incorrectly labeled as 'sin' instead of 'sin(2*pi*t)', and the x-axis is labeled 'time (s)' instead of 't'. The legend shows 'exp(t)' and 'sin(2pi*t)' but the y-axis labels are wrong."
+        }
+      ]
+    },
+    {
+      "run_id": "163",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The marker for the maximum point is placed at (np.argmax(Z), np.argmin(Z)), which uses the index of the maximum value in the flattened array for x and the index of the minimum value in the flattened array for y, resulting in an incorrect (x, y) location."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The annotation text 'Max Potential' is placed at the wrong location, and the marker is at an incorrect (x, y) point, failing to mark the actual maximum of the scalar field."
+        }
+      ]
+    },
+    {
+      "run_id": "164",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The second broken bar has the segments in the wrong order: it shows (8,46), (132,15), (99,22) instead of (8,46), (99,22), (132,15), and the facecolors are assigned in the wrong order as orange, red, green instead of orange, green, red."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The y-axis labels are incorrectly set to 'Jim' and 'Bill' but are swapped, and the x-axis does not start at 0 as required."
+        }
+      ]
+    },
+    {
+      "run_id": "165",
+      "errors": []
+    },
+    {
+      "run_id": "166",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot is a Cartesian bar chart, not a polar bar plot as required. The data is displayed in four separate vertical bar charts instead of a single circular polar plot. The legend shows four groups but the chart does not use a polar coordinate system."
+        }
+      ]
+    },
+    {
+      "run_id": "167",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart uses the wrong color for the Shasta line; it is orange instead of the required blue, and the legend incorrectly labels Shasta as orange. The Oroville line is blue, but the Shasta line is orange, violating the requirement to label the lines exactly 'Oroville' and 'Shasta'."
+        }
+      ]
+    },
+    {
+      "run_id": "168",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "169",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The x-axis of the scatter plot is incorrectly labeled with values up to 100, and the y-axis has values up to 100, which is inconsistent with the requested x-axis limits of -4 to 4 and the random data range."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The figure has incorrect axis labels, with the x-axis labeled 'x' but the y-axis labeled 'y' in the wrong position, and the marginal histograms are misaligned with the main plot."
+        }
+      ]
+    },
+    {
+      "run_id": "170",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The second row uses data of size 80x70 for gamma-distributed data, but the plots show 80 events on the y-axis, which is incorrect as the data should have 80 rows and 70 columns, not 80 events."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The second row's horizontal event plot has a y-axis labeled 'Event' with values up to 160, but the data is only 80x70, so the y-axis should only go up to 79."
+        }
+      ]
+    },
+    {
+      "run_id": "171",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "173",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The y-axis label is incorrect, showing 'f(Z)' instead of 'f(z)'. The x-axis label is 'z' but the tick labels are '3' and '10', which is inconsistent with the required 'z' label. The text box containing the integral formula is incorrectly formatted and not properly placed."
+        }
+      ]
+    },
+    {
+      "run_id": "175",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart title is incorrect; it shows '3D bar layers' but the y-axis labels are 'y = 3', 'y = 2', 'y = 1', 'y = 0' instead of the required discrete values from the data, and the y-axis label is 'Y' instead of 'Y axis'."
+        }
+      ]
+    },
+    {
+      "run_id": "177",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The left panel is a bar chart, not a pie chart, and the values are incorrect (35% apples, 45% oranges, 20% bananas are not represented as percentages in the bar chart). The right panel is a stacked bar chart, but the data shown (25%, 20%, 15%, 10%) does not match the requested 25%, 40%, 20%, 15% for the age groups."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The requested pie chart is missing; instead, a bar chart is shown. The stacked bar chart is present but incorrectly labeled as 'Age of apple lovers' instead of 'Apple Preference by Age Group'. The connection lines between the panels are absent."
+        }
+      ]
+    },
+    {
+      "run_id": "180",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot title is incorrect, showing 'Radii: 0.2 to 1.2, Full Circle' instead of the required 'Filled 3D Tricontour Plot' as specified in the task."
+        }
+      ]
+    },
+    {
+      "run_id": "181",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "183",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The chart includes countries from Africa, which violates the requirement to only include Asia and Europe."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart is a pie chart, not a sunburst plot, and the hierarchical organization is incorrect with continents as the inner ring instead of the outer ring."
+        }
+      ]
+    },
+    {
+      "run_id": "191",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The chart is a treemap, not a sunburst chart, and the data is not structured hierarchically by 'Major Area', 'Regions', and 'Country'. The 'Overall score' values are not used to determine segment sizes, and the color coding for regions is incorrect (e.g., Africa is green, but the legend shows it as green, which is correct, but the chart uses the same green for Europe and Africa)."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The requested sunburst chart was not created; instead, a treemap is shown. The chart lacks a hollow center, and the title and subtitle are not correctly formatted. The legend is present but does not match the required color coding for regions."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The chart is difficult to read due to overlapping text, especially in the dense regions. The labels are small and crowded, making it hard to distinguish individual countries. The legend is partially cut off and placed outside the main plot area."
+        }
+      ]
+    },
+    {
+      "run_id": "195",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The ZX plane projection incorrectly uses 'Engine Displacement (cc)' as the z-axis label instead of '0-60 mph (sec)', and the YZ plane projection has an incorrect x-axis label of 'Gas Mileage (mpg)' instead of 'Power (kW)'. The main 3D plot also has an incorrect title '3D Car Performance' instead of '3D Car Performance Analysis'."
+        }
+      ]
+    },
+    {
+      "run_id": "196",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The title is incorrect, reading 'Beeswarm plot and Boxplots, made with matplotlib' instead of the required 'Beeswarm plot and Boxplots, made with matplotlib' with the correct capitalization and spelling."
+        }
+      ]
+    },
+    {
+      "run_id": "199",
+      "errors": []
+    },
+    {
+      "run_id": "200",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The y-axis starts at 25 instead of 0, violating the requirement to start at 0, and the title is incorrectly written as 'Beeswarm plot and Boxplots, made with matplotlib' with a typo in 'matplotlib'."
+        }
+      ]
+    },
+    {
+      "run_id": "202",
+      "errors": []
+    },
+    {
+      "run_id": "203",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot uses a Cartesian projection instead of the required polar projection, and the title is incorrect."
+        }
+      ]
+    },
+    {
+      "run_id": "204",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The x-axis labels are incorrect; the conditions are labeled as Baseline, Cat-A, Cat-B, Cat-C, Cat-D, but the data points are plotted in the order Cat-A, Cat-B, Cat-C, Cat-D, Baseline, which is not the order listed in the task."
+        }
+      ]
+    },
+    {
+      "run_id": "205",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The flow values are incorrect; the diagram shows 100, 20, 20, 20, 20, and 10, but the transitions are reversed, with Phase 1 having a value of 100 and the final phase having a value of 20, which does not represent a decreasing flow from Phase 1 to Hurray!."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart is not a Sankey diagram; it uses horizontal bars and arrows, which do not accurately represent the flow between phases as required. The final phase 'Hurray!' is not highlighted with a blue color and bold font as specified."
+        }
+      ]
+    },
+    {
+      "run_id": "206",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The error bars are plotted at the wrong indices; the condition for error bar placement is incorrect, as the agent used `i % 20 == 0` and `(i // 20) % 3 in [0, 2]`, but the logic for selecting indices is flawed, leading to incorrect error bar locations."
+        }
+      ]
+    },
+    {
+      "run_id": "208",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "209",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The legend incorrectly shows Group 1 as blue and Group 2 as orange, but the beeswarm plot for Group 1 is blue and Group 2 is orange, which is the opposite of the requested color assignment."
+        }
+      ]
+    },
+    {
+      "run_id": "210",
+      "errors": []
+    },
+    {
+      "run_id": "212",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The plot uses 'Sepal Length' as the z-axis label instead of 'Sepal Length(cm)', and the title is incorrect, reading 'Iris species with 95% confidence ellipsoids' instead of the required title. The x-axis is labeled 'Petal Length' correctly, but the y-axis is labeled 'Petal Width' without the unit, and the z-axis is missing the unit. The legend is also missing."
+        }
+      ]
+    },
+    {
+      "run_id": "213",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The quartile values shown in the box plot (Q1=642, Median=714, Q3=777) are incorrect; the actual values should be Q1=642, Median=714, Q3=777, but the data shows different values. The minimum and maximum values are also incorrect (Min=498, Max=1598) compared to the actual data (Min=498, Max=5019)."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The box plot is not axis-free as required; it has x-axis labels and ticks. The histogram's y-axis does not start at 0, and the x-axis label is missing. The figure size is not 9 by 7 inches. The quartile lines are not continuous red dashed lines across both sections."
+        }
+      ]
+    },
+    {
+      "run_id": "214",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The y-axis label is 'Frequency (Hz)' but the axis shows values 0, 1, 2, 3, 4, which are not frequencies. The legend labels are '100 Hz', '200 Hz', etc., but the y-axis values are 0, 1, 2, 3, 4, indicating the y-axis represents frequency indices, not actual frequencies. The title is also incorrect, reading '3D waterfall plot of the frequency time series' instead of the required title."
+        }
+      ]
+    },
+    {
+      "run_id": "216",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The data for AI Coding Tools is incorrect: the Agree value is 28% instead of 45%, and the Disagree value is 25% instead of 48%. The Disagree value for Open Floor Plans is also wrong, showing 48% but the chart shows 48% for a different topic."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The legend labels are incorrect: 'Agree', 'Neutral', 'Disagree' are replaced with 'Agree', 'Neutral', 'Disagree' but the colors are wrong, and the chart title is missing."
+        }
+      ]
+    }
+  ]
+}

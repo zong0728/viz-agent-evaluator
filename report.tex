@@ -1,0 +1,232 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\title{11-768 HW2: Evaluating a Data-Visualization Agent}
+\author{Shengzhong Guan}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Part 1: Examine Seed Agent Runs}
+
+\subsection{Comparison of Ground-Truth and Validator Labels}
+The baseline performed poorly overall (macro-MCC 0.0268). Table~\ref{tab:seed}
+shows the family scores. Its execution judge produced 33 false positives and
+eight false negatives. It predicted no \texttt{wrong\_data} or
+\texttt{hard\_to\_read} errors, and found only three of 71 evaluated
+\texttt{wrong\_chart} positives.
+
+\begin{table}[h]
+\centering
+\caption{Seed-set MCC from \texttt{output/baseline\_predictions.json}, \texttt{pre\_iteration\_seed\_predictions.json}, and \texttt{final\_seed\_predictions.json}.}
+\label{tab:seed}
+\begin{tabular}{lrrrrr}
+\toprule
+Validator & Execution & Wrong data & Wrong chart & Hard to read & Macro \\
+\midrule
+Baseline & -0.0022 & 0.0000 & 0.1096 & 0.0000 & 0.0268 \\
+Part 2 & 1.0000 & 0.4251 & 0.3088 & 0.0301 & 0.4410 \\
+Final & 1.0000 & 0.3906 & 0.2975 & 0.0301 & 0.4296 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Recurring Error Type 1: Contradictory Execution Decisions}
+The baseline asked the VLM whether execution failed and parsed the first
+\texttt{YES}/\texttt{NO} token. In runs 004, 022, and 023, its own evidence said
+that the agent completed and produced \texttt{figure.png}, yet it emitted
+\texttt{execution\_failure}. Because this family caused an early return, the
+false positive also suppressed the other three judges; run 004, for example,
+was human-labeled with both wrong data and wrong chart. Conversely, all twelve
+true execution failures (001, 010, 053, 065, 089, 096, 103, 145, 168, 171,
+181, and 208) lacked the required root \texttt{figure.png}, but the baseline
+missed eight of them.
+
+\subsection{Recurring Error Type 2: Broad Prompts Miss Visual Defects}
+The baseline's short independent questions did not force a requirement-by-
+requirement comparison. Run 008 contained nearly white node labels on a white
+background and omitted a required orange source label. Run 009 left dense date
+ticks horizontal rather than at the requested 30-degree rotation, producing an
+overlapping band. Run 025 lacked the requested three-level, region-colored
+hierarchy and had extensive label collisions. Run 030 rendered one requested
+series white on white and replaced the exact suptitle. The baseline accepted
+all four.
+
+\subsection{Proposed Changes}
+First, replace model-based execution classification with deterministic checks
+for the required file, PNG format, and successful decoding. Second, make one
+joint structured VLM decision for the remaining families using the complete
+rubric, explicit family boundaries, the task, input contents, trajectory, and
+rendered image. Require concrete evidence for every positive decision.
+
+\section{Part 2: Improve the Validator}
+
+\subsection{Implemented Changes}
+The implementation follows both proposals. \texttt{judge\_execution} uses
+Pillow to reject a missing, corrupt, or non-PNG output and otherwise returns an
+empty list, allowing later checks to run. The nonterminal judge sends a bounded
+excerpt of input and trajectory evidence plus a downscaled image and original
+pixel/DPI metadata in one request. Its prompt enumerates wrong values,
+selection, ordering, chart constraints, and concrete readability failures. It
+expects a JSON object containing one Boolean and evidence string per family,
+and validates that schema before constructing errors. This also avoids the
+baseline's brittle interpretation of a leading word that contradicts the
+explanation.
+
+\subsection{Seed-Set Performance and Qualitative Analysis}
+The full Part 2 results appear in Table~\ref{tab:seed}. Execution reached
+TP=12, TN=98, FP=0, and FN=0, eliminating both contradictory decisions and the
+terminal cascade. Wrong-data MCC rose from 0 to 0.4251 and wrong-chart MCC from
+0.1096 to 0.3088. The overall macro-MCC rose from 0.0268 to 0.4410. However,
+readability remained the main weakness: the judge found only one of 39
+positives (MCC 0.0301).
+
+The revised rubric correctly recovered multiple defects in runs 004, 025, and
+030. A representative false negative is run 008: the image visibly contains
+near-white labels on white, but the model returned only \texttt{wrong\_chart}
+and missed \texttt{hard\_to\_read}. A representative false positive is run
+013, where it called requested axis-limit/design discrepancies
+\texttt{wrong\_data}; this suggests that the family boundary needs more
+emphasis. Run 031 is another false positive: the model's own explanation first
+claims the legend mapping is wrong and then says the same mapping is correct,
+showing that structured output alone does not eliminate visual hallucination.
+
+\section{Part 3: Design New Evaluation Tasks}
+
+\subsection{Anticipated Generalization Weaknesses}
+I targeted two classes. \emph{Derived-data encoding} tests whether the
+validator can verify calculations that are not directly readable from the
+prompt image alone, especially when several visual channels encode different
+derived quantities. \emph{Precise chart constraints} tests whether it can
+audit exact scales, styles, subplot relationships, annotations, and layout
+instead of merely recognizing the broad chart type.
+
+\subsection{Task Design}
+\begin{itemize}
+  \item \texttt{regional\_profit\_filter}: filter records, compute and aggregate
+  profit, sort descending, and draw labeled horizontal bars.
+  \item \texttt{weighted\_bubble\_metrics}: encode latency, accuracy, request
+  count, and cost simultaneously through position, area, and color.
+  \item \texttt{monthly\_conversion\_combo}: derive conversion rates and a
+  cumulative series in stacked panels, including a twin axis and annotations.
+  \item \texttt{log\_errorbar\_threshold}: combine log scales, proportional
+  error bars, exact limits, shading, grids, and an arrow annotation.
+  \item \texttt{shared\_panel\_functions}: enforce four exact functions in a
+  shared-axis 2-by-2 layout with panel-specific styles and spine rules.
+\end{itemize}
+Every task's inputs are empty: all data are synthetic, written by me, and included directly in the prompts, making the
+expected values independently checkable without external data or packages.
+Each task was run once with Qwen2.5-Coder-3B, Ministral-3-14B, and
+GLM-4.7-Flash through the fixed scaffold.
+
+\subsection{Agent Runs, Human Labels, and Validator Performance}
+I reviewed each task instruction, complete trajectory, and final figure,
+assigned an empty list only when it met the rubric, and treated a
+missing/invalid figure as terminal. I also read each PNG's pixel dimensions.
+This caught an easy-to-miss failure: several agents created the requested
+Matplotlib canvas but saved with \texttt{bbox\_inches="tight"}, changing the
+final required pixel dimensions. Those runs are labeled \texttt{wrong\_chart},
+consistent with the rubric's exact figure-size requirement.
+
+The Part 2 validator retained perfect execution classification but had
+wrong-data MCC -0.2000 because it missed both horizontal-bar ordering errors
+and hallucinated two other data errors. It detected eight of eleven chart
+errors without a false positive (MCC 0.4264). Readability MCC was -0.0909: it
+missed the real overlapping twin-axis labels in
+\texttt{monthly\_conversion\_combo\_\_qwen} and hallucinated clipping in a
+readable grid.
+
+The agent failures and validator failures were distinct. Qwen's three missing
+figures were agent execution failures; its incomplete monthly annotations and
+the two non-Qwen \texttt{barh} reversals were also genuine agent mistakes.
+Tight-bounding-box saves produced genuine size violations across otherwise
+strong figures. By contrast, claims that correct labels were missing or that a
+correct cubic series used wrong values were validator hallucinations. The
+former require better generation behavior; the latter motivate conservative,
+grounded validator checks.
+
+\begin{table}[h]
+\centering
+\caption{Authored-set MCC.}
+\label{tab:authored}
+\begin{tabular}{lrrrrr}
+\toprule
+Validator & Execution & Wrong data & Wrong chart & Hard to read & Macro \\
+\midrule
+Part 2 & 1.0000 & -0.2000 & 0.4264 & -0.0909 & 0.2839 \\
+Final & 1.0000 & 0.6325 & 1.0000 & 1.0000 & 0.9081 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Ambiguous labels.} Two judgments were close calls. A figure saved with
+\texttt{bbox\_inches="tight"} meets the Matplotlib canvas request but not the final pixel size; I labeled it
+\texttt{wrong\_chart} because the task states the saved dimensions. Overlapping twin-axis tick labels in
+\texttt{monthly\_conversion\_combo\_\_qwen} were labeled \texttt{hard\_to\_read} because the text is present but difficult to read.
+
+\subsection{Harbor Packaging}
+Each task asks for \texttt{plot.py}, \texttt{figure.png}, and a task-specific
+\texttt{plotted\_values.json}. Its deterministic tests check file presence,
+PNG dimensions, literal expected sidecar values, and reproducibility after
+rerunning \texttt{plot.py}. All five reference solutions scored 1.0.
+The \texttt{wrong\_total} mutant changes West's computed profit from 90 to 88;
+it scored 0 because \texttt{test\_plotted\_values\_are\_exact} rejected the changed value. The
+\texttt{illegible} mutant preserves the values and dimensions but uses 2-point
+text; it scored 1 because the verifier does not measure rendered legibility.
+
+For these tasks, execution failure and many exact data values can be decided
+deterministically. Some requested chart properties can also be checked when
+represented in code or metadata, but arbitrary visual design errors and
+\texttt{hard\_to\_read} failures generally require image interpretation.
+Moreover, a per-task verifier contains hand-derived answers and therefore
+cannot grade private runs from unseen tasks; the submitted validator must infer
+requirements from each new prompt and its evidence.
+
+\section{Part 4: Iterate on the Design}
+
+\subsection{Additional Improvement Motivated by Part 3}
+Part 3 exposed two requirements that were more reliable to verify from metadata
+and code than from pixels. First, the joint VLM missed exact saved-image sizes.
+I added a conservative parser for explicit ``width by height inches at DPI''
+requirements and compare their computed pixel dimensions with the decoded PNG.
+Second, both non-Qwen agents sorted values descending before calling
+\texttt{barh} but did not reverse the list or call \texttt{invert\_yaxis};
+Matplotlib therefore displayed the largest value at the bottom. I added a
+trajectory check only when the prompt explicitly requires a descending
+horizontal chart from top to bottom and the uncorrected code pattern is present.
+Both checks emit grounded evidence and merge with, rather than replace, the
+model judgment.
+
+\subsection{Final Evaluation and Qualitative Error Analysis}
+On the seed set, the final validator scored macro-MCC 0.4296 (Table~\ref{tab:seed}), slightly below Part 2 (0.4410): the two new checks key on phrases specific to my authored prompts and rarely fire there, so the difference reflects sampling variation in the VLM's answers (17 of 110 runs changed prediction between the two sweeps, with both gains and losses, e.g.\ 191 gained a correct \texttt{hard\_to\_read} while 004 and 050 lost a correct \texttt{wrong\_data}). The seed set therefore shows no regression attributable to the deterministic checks, but also no improvement; the gains below are on the authored set.
+
+On the authored set, macro-MCC increased from 0.2839 to 0.9081. Wrong-data MCC
+rose from -0.2000 to 0.6325 because the deterministic \texttt{barh} check found
+both previously missed ordering errors. Wrong-chart MCC reached 1.0 because the
+dimension check found all three previous false negatives without adding a false
+positive. In this final run, the model also correctly classified the one
+readability-positive run, so that family reached MCC 1.0; because its evidence
+focused on a clipped annotation rather than the most salient overlapping twin
+ticks, I do not treat this small-set result as proof of robust readability.
+
+The final authored set has two wrong-data false positives and no false
+negatives. For \texttt{shared\_panel\_functions\_\_glm}, the judge claimed the
+cubic points do not match $[-8,-1,0,1,8]$, although those exact values are
+visible and generated by the trajectory. For
+\texttt{monthly\_conversion\_combo\_\_qwen}, it claimed the computed
+conversion percentages were wrong even though the executed formula was
+correct. Both indicate residual VLM visual hallucination; the deterministic
+checks improve requirements with safe programmatic interpretations but do not
+attempt to replace arbitrary numerical reasoning.
+
+\subsection{Further Changes and Reproduction}
+I made no validator changes beyond the two deterministic checks above. Because the model's sampling is not
+deterministic, results can vary between sweeps, as the authored-set rerun shows. Experiments were run with
+\texttt{python -m validator.runner --artifacts artifacts|runs --out output/...} followed by
+\texttt{python -m workflow score}; the outputs are in \texttt{output/}.
+
+\end{document}

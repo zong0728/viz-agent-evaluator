@@ -1,0 +1,6 @@
+{
+  "task_id": "shared_panel_functions",
+  "task_class": "precise_chart_constraints",
+  "instructions": "Using matplotlib and x=[-2, -1, 0, 1, 2], create a 2 by 2 grid with a shared x axis. Plot y=x in the top-left as a blue solid line with circle markers and title `Linear`; y=x**2 in the top-right as a red dashed line with square markers and title `Quadratic`; y=x**3 in the bottom-left as a green dotted line with triangle markers and title `Cubic`; and y=abs(x) in the bottom-right as a purple dash-dot line with diamond markers and title `Absolute`. Give every panel a light dashed grid and a legend in the upper left. Only the left-column panels should have the y-axis label `f(x)`, and only the bottom-row panels should have the x-axis label `x`. Set the exact suptitle `Four Functions on a Shared Domain`, use zero horizontal and vertical spacing between panels, and hide the top and right spines of every panel. Make the figure 8 by 8 inches at 120 dpi and save it as figure.png.",
+  "inputs": []
+}

@@ -1,0 +1,131 @@
+{
+  "predictions": [
+    {
+      "run_id": "log_errorbar_threshold__glm",
+      "errors": []
+    },
+    {
+      "run_id": "log_errorbar_threshold__ministral",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The annotation text 'threshold' is missing from the plot, and the arrow points to the wrong location, failing to annotate the point (100, 200) as required."
+        }
+      ]
+    },
+    {
+      "run_id": "log_errorbar_threshold__qwen",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The line is red instead of navy, the markers are black instead of circular, the error bars are red instead of having red caps, the shaded region is gray instead of light gray with alpha 0.3, the legend is missing, and the annotation arrow is black instead of pointing to the point with a black arrow."
+        }
+      ]
+    },
+    {
+      "run_id": "monthly_conversion_combo__glm",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The top panel's right y-axis label is missing, and the bottom panel's x-axis label is missing, violating the task requirements."
+        }
+      ]
+    },
+    {
+      "run_id": "monthly_conversion_combo__ministral",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The top panel's right y-axis label is missing, and the bottom panel's y-axis label is incorrect; it should be 'Cumulative Orders' but is missing. The top left axis label is 'Visits' but the legend shows 'Visits' as a line, not bars. The legend is misplaced and does not combine both series correctly."
+        }
+      ]
+    },
+    {
+      "run_id": "monthly_conversion_combo__qwen",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The conversion rate is incorrectly calculated as 100*orders/visits, resulting in values like 1.0 for May (170%), which is impossible. The cumulative orders are also wrong, with the final value shown as 595 instead of the correct 595."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The top panel's right y-axis label is 'Conversion Rate (%)' but the scale is incorrect, and the bottom panel's y-axis label is missing. The legend is absent, and the annotation for cumulative orders is only shown for June."
+        }
+      ]
+    },
+    {
+      "run_id": "regional_profit_filter__glm",
+      "errors": []
+    },
+    {
+      "run_id": "regional_profit_filter__ministral",
+      "errors": []
+    },
+    {
+      "run_id": "regional_profit_filter__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "shared_panel_functions__glm",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data is incorrect: y=x is shown as a line with circle markers, but y=x**2 is plotted as a red dashed line with square markers in the top-right panel, which is correct, but the bottom-left panel shows y=x**3 as a green dotted line with triangle markers, which is correct, and the bottom-right panel shows y=abs(x) as a purple dash-dot line with diamond markers, which is correct. However, the y-values for the cubic function are wrong, as they should be [-8, -1, 0, 1, 8] but are shown as [-8, -2, 0, 2, 8]."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The chart design is incorrect: the figure has a 2x2 grid with a shared x-axis, but the y-axis labels are missing from the top-left and top-right panels, and the x-axis labels are missing from the top-left and top-right panels. The legend is not in the upper left of every panel, and the top and right spines are not hidden in every panel."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The figure is hard to read: the text is partially clipped, with the title 'Four Functions on a Shared Domain' cut off at the top, and the y-axis label 'f(x)' is partially cut off in the left column. The legends are overlapping with the data, and the text is too small to be easily readable."
+        }
+      ]
+    },
+    {
+      "run_id": "shared_panel_functions__ministral",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The y-axis label 'f(x)' is missing from the top-right panel, and the x-axis label 'x' is missing from the top-left panel, violating the requirement for only left-column and bottom-row panels to have these labels."
+        }
+      ]
+    },
+    {
+      "run_id": "shared_panel_functions__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "weighted_bubble_metrics__glm",
+      "errors": []
+    },
+    {
+      "run_id": "weighted_bubble_metrics__ministral",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The y-axis label is 'Accuracy' instead of the required 'Accuracy', and the colorbar label is 'Cost per Request ($)' but the colorbar itself is labeled 'Cost per Request ($)'. The title is correct, but the y-axis limits are not set to 0.85 through 0.98 as required."
+        }
+      ]
+    },
+    {
+      "run_id": "weighted_bubble_metrics__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    }
+  ]
+}

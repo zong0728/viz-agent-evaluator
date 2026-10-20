@@ -1,0 +1,155 @@
+{
+  "predictions": [
+    {
+      "run_id": "log_errorbar_threshold__glm",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 948x587 pixels, not the explicitly requested 960x600 pixels."
+        }
+      ]
+    },
+    {
+      "run_id": "log_errorbar_threshold__ministral",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 834x567 pixels, not the explicitly requested 960x600 pixels. The annotation text 'threshold' is missing from the plot, and the arrow points to the wrong location, failing to annotate the point (100, 200) as required."
+        }
+      ]
+    },
+    {
+      "run_id": "log_errorbar_threshold__qwen",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 640x480 pixels, not the explicitly requested 960x600 pixels. The line is red instead of navy, the markers are black instead of circular navy, the error bars are red instead of red caps, the shaded region is gray instead of light gray with alpha 0.3, the annotation arrow is black instead of black, and the legend is missing."
+        }
+      ]
+    },
+    {
+      "run_id": "monthly_conversion_combo__glm",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 1068x829 pixels, not the explicitly requested 1080x840 pixels. The top panel's right y-axis label is missing, and the bottom panel's x-axis label is missing, violating the task requirements."
+        }
+      ]
+    },
+    {
+      "run_id": "monthly_conversion_combo__ministral",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 1083x829 pixels, not the explicitly requested 1080x840 pixels. The top panel's right y-axis label is missing, and the bottom panel's y-axis label is incorrect; it should be 'Cumulative Orders' but is missing. The top left axis label 'Visits' is present, but the top right label 'Conversion Rate (%)' is missing. The combined legend is not in the upper left of the top panel."
+        }
+      ]
+    },
+    {
+      "run_id": "monthly_conversion_combo__qwen",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The conversion rate values are incorrect; the agent computed 100*orders/visits but the plotted values do not match the expected percentages for the given data."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The bottom panel's y-axis label is missing, the top left y-axis label is 'Visits' but the axis shows '1750' instead of 'Visits', and the legend is absent from the top panel."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The annotation for cumulative orders in the bottom panel is only shown for June, and the text '595' is partially clipped by the plot boundary."
+        }
+      ]
+    },
+    {
+      "run_id": "regional_profit_filter__glm",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The code sorts values descending before barh without reversing or inverting the y-axis, so the visible top-to-bottom order is ascending."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 947x587 pixels, not the explicitly requested 960x600 pixels."
+        }
+      ]
+    },
+    {
+      "run_id": "regional_profit_filter__ministral",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The code sorts values descending before barh without reversing or inverting the y-axis, so the visible top-to-bottom order is ascending."
+        }
+      ]
+    },
+    {
+      "run_id": "regional_profit_filter__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "shared_panel_functions__glm",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The y=x^3 function is plotted as a dotted green line with triangle markers in the bottom-left panel, but the data points are incorrect; the values do not match the expected cubic function for x=[-2, -1, 0, 1, 2]."
+        },
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 828x913 pixels, not the explicitly requested 960x960 pixels. The x-axis label 'x' is missing from the bottom-left panel, and the y-axis label 'f(x)' is missing from the top-left panel, violating the requirement for only left-column panels to have the y-axis label and only bottom-row panels to have the x-axis label."
+        }
+      ]
+    },
+    {
+      "run_id": "shared_panel_functions__ministral",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 844x913 pixels, not the explicitly requested 960x960 pixels. The bottom-left panel is titled 'Cubic' but plots y=x^2 instead of y=x^3, and the bottom-right panel is titled 'Absolute' but plots y=x^3 instead of y=abs(x)."
+        }
+      ]
+    },
+    {
+      "run_id": "shared_panel_functions__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    },
+    {
+      "run_id": "weighted_bubble_metrics__glm",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 923x707 pixels, not the explicitly requested 960x720 pixels."
+        }
+      ]
+    },
+    {
+      "run_id": "weighted_bubble_metrics__ministral",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The saved PNG is 830x657 pixels, not the explicitly requested 960x720 pixels."
+        }
+      ]
+    },
+    {
+      "run_id": "weighted_bubble_metrics__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The required figure.png was not produced."
+        }
+      ]
+    }
+  ]
+}
