@@ -41,7 +41,7 @@ between sweeps (17 of 110 seed predictions changed). Details in
 ## Authored tasks
 
 Five adversarial tasks, each run with Qwen2.5-Coder-3B, Ministral-3-14B and
-GLM-4.7-Flash, labeled by hand and packaged as [Harbor](https://github.com/laude-institute/harbor)
+GLM-4.7-Flash, labeled by hand and packaged as Harbor
 environments with deterministic tests (file presence, PNG size, exact sidecar
 values, reproducibility). Two mutant solutions test the verifiers: `wrong_total`
 is caught, `illegible` (2-point text) is not, which is why readability needs
